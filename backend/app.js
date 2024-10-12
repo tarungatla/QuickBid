@@ -8,6 +8,7 @@ import { errorMiddleware } from "./middlewares/error.js";
 import userRouter from "./router/userRoutes.js";
 import auctionItemRouter from "./router/auctionItemRoutes.js";
 import bidRouter from "./router/bidRoutes.js";
+import commissionRouter from "./router/commissionRoutes.js";
 
 const app = express();
 config({
@@ -35,6 +36,7 @@ app.use(
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/auctionitem", auctionItemRouter);
 app.use("/api/v1/bid", bidRouter);
+app.use("/api/v1/commission", commissionRouter);
 
 connection();
 app.use(errorMiddleware);

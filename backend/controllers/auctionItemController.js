@@ -191,7 +191,7 @@ export const republishItem = catchAsyncErrors(async (req, res, next) => {
     );
   }
 
-  if (auctionItem.highestBidder) {
+  if (auctionItem.highestBidder) {  // If there is a highest bidder, then we need to refund the money to the highest bidder
     const highestBidder = await User.findById(auctionItem.highestBidder);
     highestBidder.moneySpent -= auctionItem.currentBid;
     highestBidder.auctionsWon -= 1;

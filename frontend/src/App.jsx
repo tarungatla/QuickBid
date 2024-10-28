@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { fetchUser } from "./store/slices/userSlice";
+import { fetchLeaderboard, fetchUser } from "./store/slices/userSlice";
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from "react-toastify";
@@ -11,11 +11,15 @@ import Login from './pages/Login';
 import SubmitCommission from './pages/SubmitCommission';
 import HowItWorks from './pages/HowItWorks';
 import About from "./pages/About";
+import Leaderboard from "./pages/Leaderboard";
+import { getAllAuctionItems } from "./store/slices/auctionSlice";
 
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchUser());
+    dispatch(fetchUser()); 
+    dispatch(getAllAuctionItems());
+    dispatch(fetchLeaderboard());
   }, []);
   return (
     <Router>
@@ -27,6 +31,7 @@ const App = () => {
         <Route path="/submit-commission" element={<SubmitCommission />} />
         <Route path="/how-it-works-info" element={<HowItWorks />} />
         <Route path="/about" element={<About />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
       <ToastContainer position="top-right" />
     </Router>

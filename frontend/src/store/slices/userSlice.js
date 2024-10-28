@@ -109,8 +109,7 @@ export const register = (data) => async (dispatch) => {
 };
 
 export const login = (data) => async (dispatch) => {
-  console.log(data)
-  dispatch(userSlice.actions.loginRequest());
+.  dispatch(userSlice.actions.loginRequest());
   try {
     const response = await axios.post(
       "http://localhost:5000/api/v1/user/login",

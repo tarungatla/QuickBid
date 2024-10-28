@@ -53,13 +53,7 @@ export const addNewAuctionItem = catchAsyncErrors(async (req, res, next) => {
       )
     );
   }
-  const alreadyOneAuctionActive = await Auction.find({
-    // User can only have one active auction at a time    createdBy: req.user._id,
-    endTime: { $gt: Date.now() },
-  });
-  if (alreadyOneAuctionActive.length > 0) {
-    return next(new ErrorHandler("You already have one active auction.", 400));
-  }
+ 
   try {
     const cloudinaryResponse = await cloudinary.uploader.upload(
       image.tempFilePath,

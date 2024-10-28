@@ -113,7 +113,7 @@ export const register = catchAsyncErrors(async (req, res, next) => {
 
   } catch (error) {
     console.error('Error creating user:', error.message || error);
-    return next(new ErrorHandler('User creation failed.', 500));
+    return next(new ErrorHandler(error.message , 500));
   }
 });
 

@@ -12,8 +12,9 @@ import SubmitCommission from './pages/SubmitCommission';
 import HowItWorks from './pages/HowItWorks';
 import About from "./pages/About";
 import Leaderboard from "./pages/Leaderboard";
-import { getAllAuctionItems } from "./store/slices/auctionSlice";
 import Auctions from "./pages/Auctions";
+import AuctionItem from "./pages/AuctionItem";
+import { getAllAuctionItems } from "./store/slices/auctionSlice";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const App = () => {
     dispatch(getAllAuctionItems());
     dispatch(fetchLeaderboard());
   }, []);
+  
   return (
     <Router>
       <SideDrawer />
@@ -34,6 +36,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/auctions" element={<Auctions />} />
+        <Route path="/auction/item/:id" element={<AuctionItem />} />
       </Routes>
       <ToastContainer position="top-right" />
     </Router>

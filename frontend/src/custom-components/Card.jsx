@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Card = ({ imgSrc, title, startingBid, startTime, endTime, id }) => {
   const calculateTimeLeft = () => {
     const now = new Date();
-    const startDifference = new Date(startTime) - now;  
+    const startDifference = new Date(startTime) - now;
     const endDifference = new Date(endTime) - now;
     let timeLeft = {};
 
@@ -51,22 +51,23 @@ const Card = ({ imgSrc, title, startingBid, startTime, endTime, id }) => {
         <img
           src={imgSrc}
           alt={title}
-          className="w-full aspect-[4/3] m-auto object-cover rounded-t-lg group-hover:opacity-90 transition-opacity duration-300"
+          className="w-full aspect-[4/3] m-auto object-contain rounded-t-lg group-hover:opacity-90 transition-opacity duration-300 bg-gray-100"
         />
+
         <div className="px-4 pt-4 pb-3">
           <h5 className="font-semibold text-lg text-gray-800 group-hover:text-[#d6482b] mb-2 transition-colors duration-300">
             {title}
           </h5>
-  
+
           {startingBid && (
             <p className="text-gray-600 font-light mb-1">
               Starting Bid:
               <span className="text-[#fdba88] font-semibold ml-1">
-               ₹{startingBid}
+                ₹{startingBid}
               </span>
             </p>
           )}
-          
+
           <p className="text-gray-600 font-light">
             {timeLeft.type}
             {Object.keys(timeLeft).length > 1 ? (

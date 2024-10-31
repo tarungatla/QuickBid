@@ -26,16 +26,19 @@ A dynamic and user-friendly **online auction platform** that connects **auctione
 ## Tools and Technologies🚀
 
 ### **Frontend**
-- React.js
-- Tailwind CSS
+- React.js: For building a dynamic user interface.
+- Tailwind CSS: For responsive and modern styling.
+- Redux: For effective state management.
+- React Router: For handling navigation between views.
+- Axios: For making HTTP requests to the backend.
 
 ### **Backend**
-- Node.js
-- MongoDB (Database)
-- Mongoose (ODM)
-- Cron Jobs (for Auction and Payment Management)
-- JWT (Authentication)
-- Cloudinary (File Storage)
+- Node.js: Server-side runtime for building scalable applications.
+- MongoDB: NoSQL database.
+- Mongoose: ODM for interacting with MongoDB.
+- Cron Jobs: For automated auction and payment management.
+- JWT: For secure authentication.
+- Cloudinary: For file storage.
 
 <br/>
 

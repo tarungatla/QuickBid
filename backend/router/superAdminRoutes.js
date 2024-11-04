@@ -3,7 +3,6 @@ import { isAuthenticated, isAuthorized } from "../middlewares/auth.js";
 import {
   deleteAuctionItem,
   deletePaymentProof,
-  fetchAllUsers,
   getAllPaymentProofs,
   getPaymentProofDetail,
   updateProofStatus,
@@ -45,13 +44,6 @@ router.delete(
   isAuthenticated,
   isAuthorized("Super Admin"),
   deletePaymentProof
-);
-
-router.get(
-  "/users/getall",
-  isAuthenticated,
-  isAuthorized("Super Admin"),
-  fetchAllUsers
 );
 
 router.get(

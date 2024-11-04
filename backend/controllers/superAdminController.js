@@ -80,57 +80,6 @@ export const deletePaymentProof = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-export const fetchAllUsers = catchAsyncErrors(async (req, res, next) => {
-  const users = await User.aggregate([
-    {
-      $group: {
-        _id: {
-          month: { $month: "$createdAt" },
-          year: { $year: "$createdAt" },
-          role: "$role",
-        },
-        count: { $sum: 1 },
-      },
-    },
-    {
-      // specifying which fields to include in the result.
-      $project: {
-        month: "$_id.month",
-        year: "$_id.year",
-        role: "$_id.role",
-        count: 1,
-        _id: 0,
-      },
-    },
-    {
-      $sort: { year: 1, month: 1 },
-    },
-  ]);
-
-  console.log(users);
-  const bidders = users.filter((user) => user.role === "Bidder");
-  const auctioneers = users.filter((user) => user.role === "Auctioneer");
-
-  const tranformDataToMonthlyArray = (data, totalMonths = 12) => {
-    const result = Array(totalMonths).fill(0);
-
-    data.forEach((item) => {
-      result[item.month - 1] = item.count;
-    });
-
-    return result;
-  };
-
-  const biddersArray = tranformDataToMonthlyArray(bidders);
-  const auctioneersArray = tranformDataToMonthlyArray(auctioneers);
-
-  res.status(200).json({
-    success: true,
-    biddersArray,
-    auctioneersArray,
-  });
-});
-
 export const monthlyRevenue = catchAsyncErrors(async (req, res, next) => {
   const payments = await Commission.aggregate([
     {

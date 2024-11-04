@@ -180,7 +180,7 @@ const Drawer = ({ setOpenDrawer, openDrawer, id }) => {
             <div>
               <button
                 type="button"
-                className="bg-red-500 flex justify-center w-full py-2 rounded-md text-white font-semibold text-xl transition-all duration-300"
+                className="bg-black flex justify-center w-full py-2 rounded-md text-white font-semibold text-xl transition-all duration-300 hover:bg-gray-800"
                 onClick={() => setOpenDrawer(false)}
               >
                 Cancel

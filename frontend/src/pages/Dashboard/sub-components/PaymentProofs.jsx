@@ -93,8 +93,7 @@ export const Drawer = ({ setOpenDrawer, openDrawer }) => {
   return (
     <>
       <section
-        className={`fixed ${openDrawer && singlePaymentProof.userId ? "bottom-0" : "-bottom-full"
-          }  left-0 w-full transition-all duration-300 h-full bg-[#00000087] flex items-end`}
+        className={`fixed ${openDrawer && singlePaymentProof.userId ? "bottom-0" : "opacity-0 visibility-hidden"} left-0 w-full transition-all duration-300 h-full bg-[#00000087] flex items-end`}
       >
         <div className="bg-white h-fit transition-all duration-300 w-full">
           <div className="w-full px-5 py-8 sm:max-w-[640px] sm:m-auto">

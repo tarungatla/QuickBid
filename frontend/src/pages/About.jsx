@@ -33,7 +33,7 @@ const About = () => {
       <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] gap-7 flex flex-col min-h-screen py-4 justify-center">
         <div>
           <h1
-            className={`text-[#d6482b] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
+            className={`text-[#362bd6] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
           >
             About Us
           </h1>
@@ -104,7 +104,7 @@ const About = () => {
           </p>
         </div>
         <div>
-          <p className="text-[#d6482b] text-xl font-bold mb-3">
+          <p className="text-[#362bd6] text-xl font-bold mb-3">
             Thank you for choosing QuickBid. We look forward to being a part of
             your auction journey!
           </p>

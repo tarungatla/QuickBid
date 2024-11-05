@@ -52,7 +52,7 @@ const HowItWorks = () => {
     <>
       <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col min-h-screen py-4 justify-center">
         <h1
-          className={`text-[#d6482b] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
+          className={`text-[#362bd6] text-2xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
         >
           Discover How QuickBid Operates
         </h1>
@@ -63,11 +63,11 @@ const HowItWorks = () => {
                 key={index}
                 className="bg-white rounded-md p-2 lg:p-5 flex flex-col gap-2 group hover:bg-black transition-all duration-300"
               >
-                <div className="bg-black text-white p-3 text-xl rounded-full w-fit group-hover:bg-[#d6482b] transition-all duration-300">
+                <div className="bg-black text-white p-3 text-xl rounded-full w-fit group-hover:bg-[#362bd6] transition-all duration-300">
                   {element.icon}
                 </div>
                 <h3
-                  className={`text-[#D6482B] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}
+                  className={`text-[#362bd6] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl`}
                 >
                   {element.title}
                 </h3>

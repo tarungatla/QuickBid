@@ -29,7 +29,7 @@ const Login = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 flex items-center justify-center p-4">
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-center bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl font-bold text-center bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
             Login
           </h1>
         </div>
@@ -48,7 +48,7 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
-                         focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500
+                         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
                          transition-colors duration-200"
               required
             />
@@ -67,7 +67,7 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm 
-                         focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500
+                         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
                          transition-colors duration-200"
               required
             />
@@ -76,10 +76,10 @@ const Login = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white font-semibold 
+            className="w-full bg-gradient-to-r from-blue-600 to-violet-600 text-white font-semibold 
                      py-2 px-4 rounded-md transition-all duration-300
-                     hover:from-orange-700 hover:to-red-700
-                     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500
+                     hover:from-blue-700 hover:to-violet-700
+                     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
                      disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {loading ? (

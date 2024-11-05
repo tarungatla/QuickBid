@@ -13,7 +13,7 @@ const Leaderboard = () => {
           <>
             <div className="flex flex-col min-[340px]:flex-row min-[340px]:gap-2 mb-5">
               <h1
-                className={`text-[#D6482B] text-xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
+                className={`text-[#362bd6] text-xl font-bold mb-2 min-[480px]:text-4xl md:text-6xl xl:text-7xl 2xl:text-8xl`}
               >
                 Bidders Leaderboard
               </h1>

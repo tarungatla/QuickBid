@@ -21,11 +21,11 @@ const UpcomingAuctions = () => {
       </h3>
       <div className="flex flex-wrap gap-6">
         <div className="bg-[#161613] w-full p-6 rounded-lg flex flex-col justify-between items-start lg:flex-1 lg:h-auto lg:p-8 2xl:basis-64 shadow-lg">
-          <span className="rounded-full bg-[#fdba88] text-white w-fit p-4 flex items-center justify-center shadow-md">
+          <span className="rounded-full bg-[#8890fd] text-white w-fit p-4 flex items-center justify-center shadow-md">
             <RiAuctionFill size={28} />
           </span>
           <div className="mt-4">
-            <h3 className="text-[#fdba88] text-3xl font-bold mb-1 lg:text-4xl">
+            <h3 className="text-[#8890fd] text-3xl font-bold mb-1 lg:text-4xl">
               Auctions For
             </h3>
             <h3 className="text-white text-3xl font-bold lg:text-4xl">
@@ -53,7 +53,7 @@ const UpcomingAuctions = () => {
               </div>
               <div className="flex justify-between">
                 <p className="text-gray-600 font-semibold">Starting Bid:</p>
-                <p className="text-[#fdba88] font-semibold">₹{element.startingBid}</p>
+                <p className="text-[#8890fd] font-semibold">₹{element.startingBid}</p>
               </div>
               <div className="flex flex-col">
                 <p className="text-gray-600 font-bold">Starting Time:</p>

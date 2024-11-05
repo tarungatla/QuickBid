@@ -5,6 +5,9 @@ export const generateToken = (user, message, statusCode, res) => {
             Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
         ),
         httpOnly: true,
+        // uncomment in production
+        // secure: true,  // only sent over HTTPS
+        // sameSite: "None" // frontend backend on different domains or subdomains
     }).json({
         success: true,
         user,

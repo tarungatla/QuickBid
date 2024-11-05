@@ -55,14 +55,14 @@ const Card = ({ imgSrc, title, startingBid, startTime, endTime, id }) => {
         />
 
         <div className="px-4 pt-4 pb-3">
-          <h5 className="font-semibold text-lg text-gray-800 group-hover:text-[#d6482b] mb-2 transition-colors duration-300">
+          <h5 className="font-semibold text-lg text-gray-800 group-hover:text-[#362bd6] mb-2 transition-colors duration-300">
             {title}
           </h5>
 
           {startingBid && (
             <p className="text-gray-600 font-light mb-1">
               Starting Bid:
-              <span className="text-[#fdba88] font-semibold ml-1">
+              <span className="text-[#8890fd] font-semibold ml-1">
                 ₹{startingBid}
               </span>
             </p>
@@ -71,11 +71,11 @@ const Card = ({ imgSrc, title, startingBid, startTime, endTime, id }) => {
           <p className="text-gray-600 font-light">
             {timeLeft.type}
             {Object.keys(timeLeft).length > 1 ? (
-              <span className="text-[#fdba88] font-semibold ml-1">
+              <span className="text-[#8890fd] font-semibold ml-1">
                 {formatTimeLeft(timeLeft)}
               </span>
             ) : (
-              <span className="text-[#fdba88] font-semibold ml-1">Time's up!</span>
+              <span className="text-[#8890fd] font-semibold ml-1">Time's up!</span>
             )}
           </p>
         </div>

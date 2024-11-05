@@ -28,7 +28,7 @@ const SideDrawer = () => {
     <>
       <div
         onClick={() => setShow(!show)}
-        className="fixed right-5 top-5 bg-[#D6482B] text-white text-3xl p-2 rounded-md hover:bg-[#b8381e] lg:hidden"
+        className="fixed right-5 top-5 bg-[#362bd6] text-white text-3xl p-2 rounded-md hover:bg-[#362bd6] lg:hidden"
       >
         <GiHamburgerMenu />
       </div>
@@ -42,14 +42,14 @@ const SideDrawer = () => {
             <h4 className="text-2xl font-semibold mb-4">
               Quick
               
-              <span className="text-[#D6482b]">Bid</span>
+              <span className="text-[#362bd6]">Bid</span>
             </h4>
           </Link>
           <ul className="flex flex-col gap-3">
             <li>
               <Link
                 to={"/auctions"}
-                className="flex text-xl font-semibold gap-2 items-center hover:text-[#D6482b]"
+                className="flex text-xl font-semibold gap-2 items-center hover:text-[#362bd6]"
               >
                 <RiAuctionFill /> Auctions
               </Link>
@@ -57,7 +57,7 @@ const SideDrawer = () => {
             <li>
               <Link
                 to={"/leaderboard"}
-                className="flex text-xl font-semibold gap-2 items-center hover:text-[#D6482b]"
+                className="flex text-xl font-semibold gap-2 items-center hover:text-[#362bd6]"
               >
                 <MdLeaderboard /> Leaderboard
               </Link>
@@ -67,7 +67,7 @@ const SideDrawer = () => {
                 <li>
                   <Link
                     to={"/submit-commission"}
-                    className="flex text-xl font-semibold gap-2 items-center hover:text-[#D6482b]"
+                    className="flex text-xl font-semibold gap-2 items-center hover:text-[#362bd6]"
                   >
                     <FaFileInvoiceDollar /> Submit Commission
                   </Link>
@@ -75,7 +75,7 @@ const SideDrawer = () => {
                 <li>
                   <Link
                     to={"/create-auction"}
-                    className="flex text-xl font-semibold gap-2 items-center hover:text-[#D6482b]"
+                    className="flex text-xl font-semibold gap-2 items-center hover:text-[#362bd6]"
                   >
                     <IoIosCreate /> Create Auction
                   </Link>
@@ -83,7 +83,7 @@ const SideDrawer = () => {
                 <li>
                   <Link
                     to={"/view-my-auctions"}
-                    className="flex text-xl font-semibold gap-2 items-center hover:text-[#D6482b]"
+                    className="flex text-xl font-semibold gap-2 items-center hover:text-[#362bd6]"
                   >
                     <FaEye /> View My Auctions
                   </Link>
@@ -94,7 +94,7 @@ const SideDrawer = () => {
               <li>
                 <Link
                   to={"/dashboard"}
-                  className="flex text-xl font-semibold gap-2 items-center hover:text-[#D6482b]"
+                  className="flex text-xl font-semibold gap-2 items-center hover:text-[#362bd6]"
                 >
                   <MdDashboard /> Dashboard
                 </Link>
@@ -106,13 +106,13 @@ const SideDrawer = () => {
               <div className="my-4 flex gap-2">
                 <Link
                   to={"/sign-up"}
-                  className="bg-[#D6482B] font-semibold hover:bg-[#b8381e] text-xl py-1 px-4 rounded-md text-white"
+                  className="bg-[#362bd6] font-semibold hover:bg-[#362bd6] text-xl py-1 px-4 rounded-md text-white"
                 >
                   Sign Up
                 </Link>
                 <Link
                   to={"/login"}
-                  className="text-[#DECCBE] bg-transparent border-[#DECCBE] border-2 hover:bg-[#fffefd] hover:text-[#fdba88] font-bold text-xl py-1 px-4 rounded-md"
+                  className="text-[#DECCBE] bg-transparent border-[#DECCBE] border-2 hover:bg-[#fffefd] hover:text-[#8890fd] font-bold text-xl py-1 px-4 rounded-md"
                 >
                   Login
                 </Link>
@@ -121,19 +121,19 @@ const SideDrawer = () => {
           ) : (
             <>
               <div className="my-4 flex gap-4 w-fit" onClick={handleLogout}>
-                <button className="bg-[#D6482B] font-semibold hover:bg-[#b8381e] text-xl py-1 px-4 rounded-md text-white">
+                <button className="bg-[#362bd6] font-semibold hover:bg-[#362bd6] text-xl py-1 px-4 rounded-md text-white">
                   Logout
                 </button>
               </div>
             </>
           )}
-          <hr className="mb-4 border-t-[#d6482b]" />
+          <hr className="mb-4 border-t-[#362bd6]" />
           <ul className="flex flex-col gap-3">
             {isAuthenticated && (
               <li>
                 <Link
                   to={"/me"}
-                  className="flex text-xl font-semibold gap-2 items-center hover:text-[#D6482b] hover:transition-all hover:duration-150"
+                  className="flex text-xl font-semibold gap-2 items-center hover:text-[#362bd6] hover:transition-all hover:duration-150"
                 >
                   <FaUserCircle /> Profile
                 </Link>
@@ -142,7 +142,7 @@ const SideDrawer = () => {
             <li>
               <Link
                 to={"/how-it-works-info"}
-                className="flex text-xl font-semibold gap-2 items-center hover:text-[#D6482b]"
+                className="flex text-xl font-semibold gap-2 items-center hover:text-[#362bd6]"
               >
                 <SiGooglesearchconsole /> How it works
               </Link>
@@ -179,7 +179,7 @@ const SideDrawer = () => {
           </div>
           <Link
             to={"/contact"}
-            className="text-stone-500 font-semibold hover:text-[#d6482b]"
+            className="text-stone-500 font-semibold hover:text-[#362bd6]"
           >
             Contact Us
           </Link>
@@ -188,7 +188,7 @@ const SideDrawer = () => {
             Degined By{" "}
             <Link
               to={"/"}
-              className="font-semibold hover:text-[#d6482b]"
+              className="font-semibold hover:text-[#362bd6]"
             >
               Tarunkumar Gatla
             </Link>

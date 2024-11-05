@@ -40,14 +40,14 @@ const AuctionItem = () => {
         <div className="text-sm flex flex-wrap gap-2 items-center mb-8">
           <Link
             to="/"
-            className="font-medium text-gray-600 transition-colors duration-200 hover:text-[#D6482B]"
+            className="font-medium text-gray-600 transition-colors duration-200 hover:text-[#362bd6]"
           >
             Home
           </Link>
           <FaGreaterThan className="text-gray-400 w-3 h-3" />
           <Link
             to={"/auctions"}
-            className="font-medium text-gray-600 transition-colors duration-200 hover:text-[#D6482B]"
+            className="font-medium text-gray-600 transition-colors duration-200 hover:text-[#362bd6]"
           >
             Auctions
           </Link>
@@ -79,13 +79,13 @@ const AuctionItem = () => {
                   <div className="space-y-3">
                     <p className="text-lg">
                       <span className="text-gray-600 font-medium">Condition: </span>
-                      <span className="text-[#D6482B] font-semibold">
+                      <span className="text-[#362bd6] font-semibold">
                         {auctionDetail.condition}
                       </span>
                     </p>
                     <p className="text-lg">
                       <span className="text-gray-600 font-medium">Minimum Bid: </span>
-                      <span className="text-[#D6482B] font-semibold">
+                      <span className="text-[#362bd6] font-semibold">
                         ₹{auctionDetail.startingBid}
                       </span>
                     </p>
@@ -167,7 +167,7 @@ const AuctionItem = () => {
                   )}
                 </div>
 
-                <div className="bg-[#D6482B] p-6">
+                <div className="bg-[#362bd6] p-6">
                   {Date.now() >= new Date(auctionDetail.startTime) &&
                     Date.now() <= new Date(auctionDetail.endTime) ? (
                     <>

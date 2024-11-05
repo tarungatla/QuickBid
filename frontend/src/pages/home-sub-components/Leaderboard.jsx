@@ -11,7 +11,7 @@ const Leaderboard = () => {
           <h3 className="text-[#111] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
             Top 10
           </h3>
-          <h3 className="text-[#D6482B] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
+          <h3 className="text-[#362bd6] text-xl font-semibold mb-2 min-[480px]:text-xl md:text-2xl lg:text-3xl">
             Bidders Leaderboard
           </h3>
         </div>

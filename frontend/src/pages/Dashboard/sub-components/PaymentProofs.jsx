@@ -97,7 +97,7 @@ export const Drawer = ({ setOpenDrawer, openDrawer }) => {
       >
         <div className="bg-white h-fit transition-all duration-300 w-full">
           <div className="w-full px-5 py-8 sm:max-w-[640px] sm:m-auto">
-            <h3 className="text-[#D6482B]  text-3xl font-semibold text-center mb-1">
+            <h3 className="text-[#362bd6]  text-3xl font-semibold text-center mb-1">
               Update Payment Proof
             </h3>
             <p className="text-stone-600">
@@ -149,7 +149,7 @@ export const Drawer = ({ setOpenDrawer, openDrawer }) => {
               <div>
                 <Link
                   to={singlePaymentProof.proof?.url || ""}
-                  className="bg-[#D6482B] flex justify-center w-full py-2 rounded-md text-white font-semibold text-xl transition-all duration-300 hover:bg-[#b8381e]"
+                  className="bg-[#362bd6] flex justify-center w-full py-2 rounded-md text-white font-semibold text-xl transition-all duration-300 hover:bg-[#362bd6]"
                   target="_blank"
                 >
                   Payment Proof (SS)

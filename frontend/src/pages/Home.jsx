@@ -27,7 +27,7 @@ const Home = () => {
           <h1 className="text-[#111] text-3xl font-extrabold mb-1 sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl leading-tight">
             Transparent Auctions
           </h1>
-          <h1 className="text-[#d6482b] text-3xl font-extrabold sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl leading-tight">
+          <h1 className="text-[#362bd6] text-3xl font-extrabold sm:text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl leading-tight">
             Be The Winner
           </h1>
           <div className="flex gap-4 my-8">
@@ -35,13 +35,13 @@ const Home = () => {
               <>
                 <Link
                   to="/sign-up"
-                  className="bg-[#d6482b] font-semibold hover:bg-[#b8381e] rounded-md px-8 py-3 text-white text-lg shadow-md transition-all duration-300 transform hover:-translate-y-1"
+                  className="bg-[#362bd6] font-semibold hover:bg-[#362bd6] rounded-md px-8 py-3 text-white text-lg shadow-md transition-all duration-300 transform hover:-translate-y-1"
                 >
                   Sign Up
                 </Link>
                 <Link
                   to="/login"
-                  className="text-[#DECCBE] bg-transparent border-2 border-[#DECCBE] hover:bg-[#fff3fd] hover:text-[#fdba88] font-semibold text-lg rounded-md px-8 py-3 shadow-md transition-all duration-300 transform hover:-translate-y-1"
+                  className="text-[#DECCBE] bg-transparent border-2 border-[#DECCBE] hover:bg-[#fff3fd] hover:text-[#8890fd] font-semibold text-lg rounded-md px-8 py-3 shadow-md transition-all duration-300 transform hover:-translate-y-1"
                 >
                   Login
                 </Link>

@@ -91,7 +91,7 @@ const ViewAuctionDetails = () => {
                             <header className="bg-stone-200 py-4 text-[24px] font-semibold px-4">
                                 BIDS
                             </header>
-                            <div className="bg-white px-4 min-h-fit lg:min-h-[650px]">
+                            <div className="bg-white px-6 py-4 lg:py-8 lg:min-h-[650px] shadow-md rounded-lg">
                                 {auctionBidders &&
                                     auctionBidders.length > 0 &&
                                     new Date(auctionDetail.startTime) < Date.now() &&
@@ -100,53 +100,55 @@ const ViewAuctionDetails = () => {
                                         return (
                                             <div
                                                 key={index}
-                                                className="py-2 flex items-center justify-between"
+                                                className="py-3 px-4 flex items-center justify-between border-b last:border-none"
                                             >
-                                                <div className="flex flex-1 items-center gap-4">
+                                                <div className="flex items-center gap-4 flex-1">
                                                     <img
                                                         src={element.profileImage}
                                                         alt={element.userName}
-                                                        className="w-12 h-12 rounded-full my-2 hidden md:block"
+                                                        className="w-14 h-14 rounded-full hidden md:block"
                                                     />
-                                                    <p className="text-[18px] font-semibold">
-                                                        {element.userName}
-                                                    </p>
+                                                    <p className="text-lg font-semibold text-gray-800">{element.userName}</p>
                                                 </div>
-                                                <p className="flex-1 text-center">₹{element.amount}</p>
-                                                {index === 0 ? (
-                                                    <p className="text-[20px] font-semibold text-green-600 flex-1 text-end">
-                                                        1st
-                                                    </p>
-                                                ) : index === 1 ? (
-                                                    <p className="text-[20px] font-semibold text-blue-600 flex-1 text-end">
-                                                        2nd
-                                                    </p>
-                                                ) : index === 2 ? (
-                                                    <p className="text-[20px] font-semibold text-yellow-600 flex-1 text-end">
-                                                        3rd
-                                                    </p>
-                                                ) : (
-                                                    <p className="text-[20px] font-semibold text-gray-600 flex-1 text-end">
-                                                        {index + 1}th
-                                                    </p>
-                                                )}
+                                                <p className="flex-1 text-center text-lg font-medium text-gray-700">
+                                                    ₹{element.amount.toLocaleString()}
+                                                </p>
+                                                <p
+                                                    className={`text-lg font-semibold flex-1 text-end ${index === 0
+                                                            ? "text-green-600"
+                                                            : index === 1
+                                                                ? "text-blue-500"
+                                                                : index === 2
+                                                                    ? "text-yellow-500"
+                                                                    : "text-gray-500"
+                                                        }`}
+                                                >
+                                                    {index === 0
+                                                        ? "1st"
+                                                        : index === 1
+                                                            ? "2nd"
+                                                            : index === 2
+                                                                ? "3rd"
+                                                                : `${index + 1}th`}
+                                                </p>
                                             </div>
                                         );
                                     })
                                 ) : Date.now() < new Date(auctionDetail.startTime) ? (
-                                    <img
-                                        src="/notStarted.png"
-                                        alt="not-started"
-                                        className="w-full max-h-[650px]"
-                                    />
+                                    <h1 className="text-center text-xl font-semibold text-gray-600 py-8">
+                                        Auction not started yet!
+                                    </h1>
+                                ) : Date.now() > new Date(auctionDetail.endTime) ? (
+                                    <h1 className="text-center text-xl font-semibold text-gray-600 py-8">
+                                        Auction ended!
+                                    </h1>
                                 ) : (
-                                    <img
-                                      src="/auctionEnded.png"
-                                      alt="ended"
-                                      className="w-full max-h-[650px]"
-                                    />
-                                  )}
+                                    <h1 className="text-center text-xl font-semibold text-gray-600 py-8">
+                                        No bids yet!
+                                    </h1>
+                                )}
                             </div>
+
                         </div>
                     </div>
                 )}

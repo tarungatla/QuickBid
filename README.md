@@ -21,7 +21,6 @@ A dynamic and user-friendly **online auction platform** that connects **auctione
 - [x] Connect with auctioneers for payments 🧾
 - [x] Track and manage your bidding history 📊
 
-<br/>
 
 ## Tools and Technologies🚀
 
@@ -40,7 +39,6 @@ A dynamic and user-friendly **online auction platform** that connects **auctione
 - JWT: For secure authentication.
 - Cloudinary: For file storage.
 
-<br/>
 
 ## Best Practices
 

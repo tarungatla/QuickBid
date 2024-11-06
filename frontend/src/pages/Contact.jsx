@@ -11,7 +11,7 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const navigateTo = useNavigate();
+  const navigate = useNavigate();
   const handleContactForm = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -26,17 +26,18 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_v01mtcu",
-        "template_3a1r5xp",
+        import.meta.env.VITE_serviceID,
+        import.meta.env.VITE_templateID,
         templateParams,
-        "YcOimjllS64zn4ghK"
+        "3oOxTqDCsBqVzUehJ"
       )
       .then(() => {
         toast.success("Thank You! Your message has been sent successfully.");
         setLoading(false);
-        navigateTo("/");
+        navigate("/");
       })
       .catch((err) => {
+        console.log(err)
         toast.error("Failed to send message.");
         setLoading(false);
       });

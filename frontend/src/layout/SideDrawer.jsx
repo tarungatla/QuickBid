@@ -3,13 +3,12 @@ import { RiAuctionFill } from "react-icons/ri";
 import { MdLeaderboard, MdDashboard } from "react-icons/md";
 import { SiGooglesearchconsole } from "react-icons/si";
 import { BsFillInfoSquareFill } from "react-icons/bs";
-import { FaFacebook } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdCloseCircleOutline, IoIosCreate } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
 import { FaFileInvoiceDollar } from "react-icons/fa6";
 import { FaEye } from "react-icons/fa";
+import { MdOutlineContactSupport } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "@/store/slices/userSlice";
 import { Link } from "react-router-dom";
@@ -41,7 +40,6 @@ const SideDrawer = () => {
           <Link to={"/"}>
             <h4 className="text-2xl font-semibold mb-4">
               Quick
-              
               <span className="text-[#362bd6]">Bid</span>
             </h4>
           </Link>
@@ -100,6 +98,7 @@ const SideDrawer = () => {
                 </Link>
               </li>
             )}
+
           </ul>
           {!isAuthenticated ? (
             <>
@@ -139,6 +138,7 @@ const SideDrawer = () => {
                 </Link>
               </li>
             )}
+            
             <li>
               <Link
                 to={"/how-it-works-info"}
@@ -155,6 +155,16 @@ const SideDrawer = () => {
                 <BsFillInfoSquareFill /> About Us
               </Link>
             </li>
+            {isAuthenticated && user && user.role !== "Super Admin" && (
+              <li>
+                <Link
+                  to={"/contact"}
+                  className="flex text-xl font-semibold gap-2 items-center hover:text-[#362bd6]"
+                >
+                  <MdOutlineContactSupport /> Contact Us
+                </Link>
+              </li>
+            )}
           </ul>
           <IoMdCloseCircleOutline
             onClick={() => setShow(!show)}
@@ -163,26 +173,6 @@ const SideDrawer = () => {
         </div>
 
         <div>
-          <div className="flex gap-2 items-center mb-2">
-            <Link
-              to="/"
-              className="bg-white text-stone-500 p-2 text-xl rounded-sm hover:text-blue-700"
-            >
-              <FaFacebook />
-            </Link>
-            <Link
-              to="/"
-              className="bg-white text-stone-500 p-2 text-xl rounded-sm hover:text-pink-500"
-            >
-              <RiInstagramFill />
-            </Link>
-          </div>
-          <Link
-            to={"/contact"}
-            className="text-stone-500 font-semibold hover:text-[#362bd6]"
-          >
-            Contact Us
-          </Link>
           <p className="text-stone-500">&copy; QuickBid, LLC.</p>
           <p className="text-stone-500">
             Degined By{" "}

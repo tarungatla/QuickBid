@@ -149,8 +149,8 @@ export const logout = catchAsyncErrors(async (req, res, next) => {  // just expi
       expires: new Date(Date.now()),
       httpOnly: true,
       // uncomment for production
-      // secure: true,
-      // sameSite: "None"
+      secure: true,
+      sameSite: "None"
     })
     .json({
       success: true,

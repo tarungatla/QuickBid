@@ -6,8 +6,8 @@ export const generateToken = (user, message, statusCode, res) => {
         ),
         httpOnly: true,
         // uncomment in production
-        // secure: true,  // only sent over HTTPS
-        // sameSite: "None" // frontend backend on different domains or subdomains
+        secure: true,  // only sent over HTTPS
+        sameSite: "None" // frontend backend on different domains or subdomains
     }).json({
         success: true,
         user,

@@ -10,7 +10,7 @@ const FeaturedAuctions = () => {
         <h3 className="text-gray-800 text-2xl font-semibold mb-6 sm:text-3xl lg:text-4xl">
           Featured Auctions
         </h3>
-        <div className="flex flex-wrap gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {allAuctions.slice(0, 8).map((element) => (
             <Card
               title={element.title}

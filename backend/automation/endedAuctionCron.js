@@ -10,10 +10,16 @@ export const endedAuctionCron = () => {
     // Run every minute
     const now = new Date();
     console.log("Cron for ended auction running...");
-    const endedAuctions = await Auction.find({
-      endTime: { $lt: now },
+    const allAuctions = await Auction.find({
       commissionCalculated: false,
     });
+    const endedAuctions = allAuctions.filter(auction => {
+      const endTimeStr = auction.endTime;
+      const dateString = endTimeStr.replace(/\s*\([^)]+\)$/, ''); // Remove the part like "(India Standard Time)"
+      const endTimeDate = new Date(dateString);
+      return endTimeDate < now;
+    });
+
     for (const auction of endedAuctions) {
       try {
         const commissionAmount = await calculateCommission(auction._id);
@@ -22,6 +28,7 @@ export const endedAuctionCron = () => {
           auctionItem: auction._id,
           amount: auction.currentBid,
         });
+        console.log(highestBidder);
         const auctioneer = await User.findById(auction.createdBy);
         auctioneer.unpaidCommission = commissionAmount;
         if (highestBidder) {
@@ -48,34 +55,39 @@ export const endedAuctionCron = () => {
             { new: true }
           );
           const subject = `Congratulations! You won the auction for ${auction.title}`;
+          const currentDate = new Date();
+
+          currentDate.setDate(currentDate.getDate() + 2);
+
+          const dueDate = currentDate.toISOString().split('T')[0];
           const message = `Dear ${bidder.userName},
 
-          Congratulations! You have won the auction for **${auction.title}**.
+        Congratulations! You have won the auction for ${auction.title}.
 
-          Before proceeding with payment, please contact your auctioneer via email: **${auctioneer.email}**.
+        Before proceeding with payment, please contact your auctioneer via email: ${auctioneer.email}.
 
-          Please complete your payment using one of the following methods:
+        Please complete your payment using one of the following methods:
 
-          1. **Bank Transfer**:
-            - **Account Name**: ${auctioneer.paymentMethods.bankTransfer.bankAccountName}
-            - **Account Number**: ${auctioneer.paymentMethods.bankTransfer.bankAccountNumber}
-            - **Bank**: ${auctioneer.paymentMethods.bankTransfer.bankName}
+        1. Bank Transfer:
+          - Account Name: ${auctioneer.paymentMethods.bankTransfer.bankAccountName}
+          - Account Number: ${auctioneer.paymentMethods.bankTransfer.bankAccountNumber}
+          - Bank: ${auctioneer.paymentMethods.bankTransfer.bankName}
 
-          2. **PayPal**:
-            - **Send payment to**: ${auctioneer.paymentMethods.paypal.paypalEmail}
+        2. PayPal:
+          - Send payment to: ${auctioneer.paymentMethods.paypal.paypalEmail}
 
-          3. **Cash on Delivery (COD)**:
-            - If you prefer COD, you must pay 20% of the total amount upfront before delivery.
-            - To pay the 20% upfront, use any of the above methods.
-            - The remaining 80% will be paid upon delivery.
-            - If you want to see the condition of your auction item, please send an email to: **${auctioneer.email}**.
+        3. Cash on Delivery (COD):
+          - If you prefer COD, you must pay 20% of the total amount upfront before delivery.
+          - To pay the 20% upfront, use any of the above methods.            
+          - The remaining 80% will be paid upon delivery.
+          - If you want to see the condition of your auction item, please send an email to: ${auctioneer.email}.
 
-          Please ensure your payment is completed by **[Payment Due Date]**. Once we confirm the payment, the item will be shipped to you.
+        Please ensure your payment is completed by ${dueDate}. Once we confirm the payment, the item will be shipped to you.
 
-          Thank you for participating!
+        Thank you for participating!
 
-          Best regards,  
-          Tarunkumar Auction Team`;
+        Best regards,  
+        Tarunkumar Auction Team`;
 
           console.log("SENDING EMAIL TO HIGHEST BIDDER");
 

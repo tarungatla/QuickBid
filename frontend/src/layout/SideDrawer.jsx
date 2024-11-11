@@ -32,9 +32,8 @@ const SideDrawer = () => {
         <GiHamburgerMenu />
       </div>
       <div
-        className={`w-[100%] sm:w-[300px] bg-[#f6f4f0] h-full fixed top-0 ${
-          show ? "left-0" : "left-[-100%]"
-        } transition-all duration-100 p-4 flex flex-col justify-between lg:left-0 border-r-[1px] border-r-stone-500`}
+        className={`w-[100%] sm:w-[300px] bg-[#f6f4f0] h-full fixed top-0 ${show ? "left-0" : "left-[-100%]"
+          } transition-all duration-100 p-4 flex flex-col justify-between lg:left-0 border-r-[1px] border-r-stone-500 z-50`}  // Added z-50
       >
         <div className="relative">
           <Link to={"/"}>
@@ -138,7 +137,7 @@ const SideDrawer = () => {
                 </Link>
               </li>
             )}
-            
+
             <li>
               <Link
                 to={"/how-it-works-info"}

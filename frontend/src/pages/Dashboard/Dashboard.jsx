@@ -20,10 +20,13 @@ const Dashboard = () => {
     dispatch(clearAllSuperAdminSliceErrors());
   }, []);
 
-  const { user, isAuthenticated } = useSelector((state) => state.user);
+  const { isAuthenticated } = useSelector((state) => state.user);
+  const authenticated = JSON.parse(localStorage.getItem("persist:root")).isAuthenticated;
+  const role = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).role;
   const navigateTo = useNavigate();
+
   useEffect(() => {
-    if (user.role !== "Super Admin" || !isAuthenticated) {
+    if (!authenticated || role !== "Super Admin") {
       navigateTo("/");
     }
   }, [isAuthenticated]);

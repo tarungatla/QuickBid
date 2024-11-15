@@ -6,12 +6,12 @@ const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'; // Defa
 
 const userSlice = createSlice({
   name: "user",
-  initialState: {
-    loading: false,
-    isAuthenticated: false,
-    user: {},
-    leaderboard: [],
-  },
+    initialState: {
+      loading: false,
+      isAuthenticated: false,
+      user: {},
+      leaderboard: [],
+    },
   reducers: {
     registerRequest(state, action) {
       state.loading = true;

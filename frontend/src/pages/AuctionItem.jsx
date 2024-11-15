@@ -14,6 +14,7 @@ const AuctionItem = () => {
   );
   const { isAuthenticated } = useSelector((state) => state.user);
 
+  const authenticated = JSON.parse(localStorage.getItem("persist:root")).isAuthenticated;
   const navigateTo = useNavigate();
   const dispatch = useDispatch();
 
@@ -26,7 +27,7 @@ const AuctionItem = () => {
   };
 
   useEffect(() => {
-    if (!isAuthenticated) {
+    if (!authenticated) {
       navigateTo("/");
     }
     if (id) {

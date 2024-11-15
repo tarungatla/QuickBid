@@ -5,9 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 const UserProfile = () => {
   const { user, isAuthenticated, loading } = useSelector((state) => state.user);
+  const authenticated = JSON.parse(localStorage.getItem("persist:root")).isAuthenticated;
+
   const navigateTo = useNavigate();
   useEffect(() => {
-    if (!isAuthenticated) {
+    if (!authenticated) {
       navigateTo("/");
     }
   }, [isAuthenticated]);

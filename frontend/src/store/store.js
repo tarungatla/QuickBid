@@ -23,6 +23,13 @@ const rootReducer = {
 
 export const store = configureStore({
   reducer: rootReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        // Ignore actions or state that may contain non-serializable values
+        ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE'], // persist actions, for example
+      },
+    }),
 });
 
 export const persistor = persistStore(store);

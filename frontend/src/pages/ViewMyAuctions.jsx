@@ -7,13 +7,15 @@ import { useNavigate } from "react-router-dom";
 
 const ViewMyAuctions = () => {
   const { myAuctions, loading } = useSelector((state) => state.auction);
-  const { user, isAuthenticated } = useSelector((state) => state.user);
+  const { isAuthenticated } = useSelector((state) => state.user);
 
+  const authenticated = JSON.parse(localStorage.getItem("persist:root")).isAuthenticated;
+  const role = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).role;
   const dispatch = useDispatch();
   const navigateTo = useNavigate();
 
   useEffect(() => {
-    if (!isAuthenticated || user.role !== "Auctioneer") {
+    if (!authenticated || role !== "Auctioneer") {
       navigateTo("/");
     }
     dispatch(getMyAuctionItems());
